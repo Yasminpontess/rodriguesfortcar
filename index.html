@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Rodrigues Fortcar | Oficina Mecânica: Freios, Suspensão, Motor, Revisão e Injeção</title>
-
 <link rel="icon" type="image/png" href="logo.jpeg">
 <meta name="description" content="Oficina mecânica Rodrigues Fortcar em Cotia - SP: troca de óleo, freios, suspensão, direção, embreagem, arrefecimento, injeção eletrônica, escapamento, revisão preventiva, vans, Sprinter e diesel leve.">
 <meta property="og:title" content="Rodrigues Fortcar | Oficina Mecânica">
@@ -139,7 +138,6 @@ footer{padding:30px 0;text-align:center;color:var(--mut);font-size:.88rem;border
 @media(max-width:1000px){.hero-logo{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKJ9N5GSFK">
 </script>
@@ -283,6 +281,21 @@ var WHATS="5511939006751", MSG="Olá! Vim pelo site da Rodrigues Fortcar e gosta
 var wl="https://wa.me/"+WHATS+"?text="+encodeURIComponent(MSG);
 document.querySelectorAll(".wal").forEach(function(a){a.href=wl});
 document.getElementById("yr").textContent=new Date().getFullYear();
+
+// Google Ads: conta uma conversão quando alguém clica em qualquer botão do WhatsApp
+// Troque pelos dados da sua ação de conversão (Google Ads > Metas > Conversões)
+var GADS_ID="AW-XXXXXXXXXX", GADS_LABEL="XXXXXXXXXXXXXXXXXXXX";
+(function(){
+  if(location.protocol==="file:"||/claude/i.test(location.hostname))return;
+  var ads=!/X{4}/.test(GADS_ID);
+  window.dataLayer=window.dataLayer||[];
+  if(!window.gtag&&ads){window.gtag=function(){dataLayer.push(arguments)};gtag("js",new Date());var gs=document.createElement("script");gs.async=true;gs.src="https://www.googletagmanager.com/gtag/js?id="+GADS_ID;document.head.appendChild(gs)}
+  if(ads)gtag("config",GADS_ID);
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a");
+    if(a&&/wa\.me|whatsapp/i.test(a.href)&&window.gtag){gtag("event","whatsapp_click",{link_url:a.href});if(ads)gtag("event","conversion",{send_to:GADS_ID+"/"+GADS_LABEL})}
+  });
+})();
 
 // preloader
 var p=0,pb=document.getElementById("pb"),pn=document.getElementById("pn"),pre=document.getElementById("pre");
